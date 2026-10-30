@@ -71,6 +71,27 @@ python scripts/build_knowledge_base.py
 streamlit run app/main.py
 ```
 
+### 7. Launch the React UI
+
+The React client is the preferred frontend. Run the Python API and Vite client
+in separate terminals:
+
+```bash
+# Terminal 1 — API (use APP_MODE=live for Gemini-backed generation)
+set APP_MODE=mock
+uvicorn api.main:app --reload --port 8000
+
+# Terminal 2 — React development server
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`. The client sends image uploads to
+`http://localhost:8000/api/generate` and displays visual observations,
+retrieved evidence, the generated story, consistency checks, and optional
+reasoning/baseline panels.
+
 ---
 
 ## Project Structure
