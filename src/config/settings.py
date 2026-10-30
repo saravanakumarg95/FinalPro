@@ -55,7 +55,8 @@ class AppConfig(BaseSettings):
     Application configuration.
 
     Values are loaded from environment variables (and .env file).
-    Defaults are chosen to run safely in mock mode without API keys.
+    Defaults use live Gemini processing so uploaded images are actually
+    analyzed. Tests and offline development can explicitly set APP_MODE=mock.
     """
 
     model_config = SettingsConfigDict(
@@ -115,7 +116,7 @@ class AppConfig(BaseSettings):
 
     # ── Application Mode ──────────────────────────────────────────────────────
     app_mode: AppMode = Field(
-        default=AppMode.MOCK,
+        default=AppMode.LIVE,
         description=(
             "mock: all pipeline stages use deterministic mocks (no API). "
             "live: real model calls are made."

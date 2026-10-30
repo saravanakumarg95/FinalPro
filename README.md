@@ -49,13 +49,12 @@ copy .env.example .env
 # GEMINI_API_KEY=your_actual_key_here
 ```
 
-### 4. Run in mock mode (no API key required)
+### 4. Verify installation
 
 ```bash
-# Verify installation
 python -c "from src.config.settings import AppConfig; print(AppConfig())"
 
-# Run tests (all mock — no API calls)
+# Run tests (tests explicitly use mock components)
 pytest tests/ -v
 ```
 
@@ -77,8 +76,7 @@ The React client is the preferred frontend. Run the Python API and Vite client
 in separate terminals:
 
 ```bash
-# Terminal 1 — API (use APP_MODE=live for Gemini-backed generation)
-set APP_MODE=mock
+# Terminal 1 — API (uses APP_MODE=live from .env)
 uvicorn api.main:app --reload --port 8000
 
 # Terminal 2 — React development server
