@@ -59,8 +59,8 @@ function App() {
   return (
     <main className="shell">
       <header className="topbar">
-        <div className="brand-mark">✦</div>
-        <div><p className="eyebrow">Evidence-grounded cultural reasoning</p><h1>Tamil Story Studio</h1></div>
+        <div className="brand-mark" aria-label="Story Studio logo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 7.5A3.5 3.5 0 0 1 9.5 4H26v20H9.5A3.5 3.5 0 0 0 6 27.5v-20Z" /><path d="M6 7.5A3.5 3.5 0 0 0 9.5 11H26M11 15h10M11 19h7" /></svg></div>
+        <div><p className="eyebrow">Evidence-grounded cultural reasoning</p><h1>Story Studio</h1></div>
         <span className="mode-pill">● Mock-ready pipeline</span>
       </header>
 
@@ -91,7 +91,7 @@ function App() {
         </aside>
 
         <section className="results">
-          {!result && !loading && <div className="empty-state"><div className="empty-orbit">✦</div><h3>Your story will appear here</h3><p>Begin with a visual clue. The pipeline will separate what is observed from what needs cultural evidence.</p></div>}
+          {!result && !loading && <div className="empty-state"><div className="empty-orbit"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 7.5A3.5 3.5 0 0 1 9.5 4H26v20H9.5A3.5 3.5 0 0 0 6 27.5v-20Z" /><path d="M6 7.5A3.5 3.5 0 0 0 9.5 11H26M11 15h10M11 19h7" /></svg></div><h3>Your story will appear here</h3><p>Begin with a visual clue. The pipeline will separate what is observed from what needs cultural evidence.</p></div>}
           {loading && <div className="empty-state"><div className="loader" /><h3>Reading the scene…</h3><p>Visual understanding, retrieval, reasoning, and verification are running.</p></div>}
           {result && <ResultView result={result} showTrace={showTrace} setShowTrace={setShowTrace} showBaselines={showBaselines} setShowBaselines={setShowBaselines} />}
         </section>
