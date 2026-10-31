@@ -58,7 +58,7 @@ Rules:
 class GeminiVLM:
     """Gemini Flash vision-language model adapter (google-genai 2.8.0 SDK)."""
 
-    def __init__(self, api_key: str, model_name: str = "gemini-2.0-flash"):
+    def __init__(self, api_key: str, model_name: str = "gemini-3.8-flash"):
         self.client = genai.Client(api_key=api_key)
         self.model_name = model_name
         log.info(f"GeminiVLM initialised with model: {model_name}")

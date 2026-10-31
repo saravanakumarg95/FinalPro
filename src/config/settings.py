@@ -78,11 +78,11 @@ class AppConfig(BaseSettings):
 
     # ── Model Names ───────────────────────────────────────────────────────────
     vlm_model: str = Field(
-        default="gemini-2.5-flash",
+        default="gemini-3.8-flash",
         description="VLM model identifier.",
     )
     llm_model: str = Field(
-        default="gemini-2.5-flash",
+        default="gemini-3.8-flash",
         description="LLM model identifier for story generation.",
     )
     embedding_model: str = Field(
